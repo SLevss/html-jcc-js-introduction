@@ -47,8 +47,8 @@ body {
     height: 20vw;
     margin-top: 2.5vw;
     border: solid 2px rgb(22, 84, 84);
-    overflow: auto;
-    border-radius: 25em;
+    overflow: hidden;
+    border-radius: 25%;
     
 }
 
