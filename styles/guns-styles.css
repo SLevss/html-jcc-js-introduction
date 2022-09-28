@@ -1,19 +1,17 @@
 @font-face {
     font-family: lakeshore;
     src: url("fonts/LAKESHOR-webfont.svg");
-    src: url("fonts/LAKESHOR-webfont.woff");
+    src: url("fonts/LAKESHOR-webfont.woff")
 }
-
 @font-face {
-    font-family: Airstream;
+    font-family: airstream;
     src: url("fonts/Airstream-webfont.svg");
-    src: url("fonts/Airstream-webfont.woff");
+    src: url("fonts/Airstream-webfont.woff")
 }
-
 :root {
     --thumbnails-img-width: 20vw;
     --thumbnails-img-height: 15vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
 }
 
 body,
@@ -36,6 +34,7 @@ body {
     text-align: center;
     font-family: lakeshore;
     text-transform: uppercase;
+    letter-spacing: 5px;
 
 }
 
@@ -51,23 +50,26 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10vh;
-
-
+    position: relative;
 
 }
 
 .details-image {
-    width: 80vw;
+    width: 90vw;
     height: 70vw;
     border-radius: 25%;
+
 }
 
 .details-title {
     display: block;
-
-
+    font-family: airstream;
+    font-style: italic;
+    background-color: beige;
+    position: absolute;
+    left: 0;
+    bottom: 3vw;
 }
-
 .thumbnails-list {
     list-style: none;
     display: flex;
@@ -99,18 +101,32 @@ body {
     display: block;
     text-align: center;
     height: var(--thumbnails-title-height);
-    background-color: beige;
+    background-color: rgb(161, 126, 84);
 }
 
 .thumbnails-anchor {
     text-decoration: none;
 }
+.thumbnails-item:hover{
+    transform: scale(1.1);
+    margin-left: 1vw;
+}
 
-@media (min-width: 560px) {
+@media(min-width: 560px) {
+    :root {
+        --thumbnails-img-width: 12vw;
+        --thumbnails-img-height: 8vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
-        max-height: 80vh;
+        max-height: 75vh;
         order: -1;
         justify-content: flex-start;
     }
@@ -118,38 +134,48 @@ body {
     .main-class {
         flex-direction: row;
         justify-content: space-around;
+
     }
 
     .details-image {
-        width: 60vw;
-        height: 30vw;
-
+        width: 45vw;
+        height: 38vw;
     }
 
     .details-container {
         justify-content: center;
-    }
-}
-
-@media (min-width: 900px) {
-    
-    .details-title {
-        font-size: 3em;
-        font-family: Airstream;
+        align-items: center;
+        margin-bottom: 0;
     }
 
-    .thumbnails-item {
-        width:30vw;
-        height: 15vm;
-        margin: 5;
-        margin-left: 0;
-       
+    @media (min-width: 900px) {
+        .thumbnails-list {
+            padding-right: 2vw;
+            margin-top: 2.5vh;
+            max-height: 86vh;
+        }
+
+        .thumbnails-title {
+            font-size: 1.3em;
+        }
+
+        .details-container {
+            margin-top: 5vh;
+            margin-right: 5vw;
+        }
+
+        
+
+        .details-title {
+            font-size: 1.5em;
+            bottom: 17vw;
+        }
+
+        .details-image {
+            width: 45vw;
+            height: 35vw;
+        }
     }
 
-    .thumbnails-title {
-        font-size: 2em;
-        font-family: Airstream;
-        background-color: rgb(161, 126, 84);
-    }
 
 }
