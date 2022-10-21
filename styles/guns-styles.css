@@ -93,7 +93,7 @@ body {
 }
 
 .details-title {
-    
+
     font-family: airstream;
     font-style: italic;
     background-color: beige;
@@ -109,11 +109,7 @@ body {
 .thumbnails-list {
     list-style: none;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-height: 25vh;
-    overflow-y: auto;
-    justify-content: space-around;
+
     padding-left: 0;
 
 }
@@ -121,7 +117,16 @@ body {
 .hidden .thumbnails-list {
     max-height: 80vh;
     margin-bottom: 10vh;
+    margin-right: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+.hidden .thumbnails-item {
+    max-height: 10vh;
+    margin-bottom: 10vh;
+}
+
 
 .thumbnails-item {
     max-width: var(--thumbnails-img-width);
@@ -161,13 +166,20 @@ body {
         --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
     }
 
+    .main-class {
+        flex-direction: row;
+        justify-content: space-around;
+        max-height: 90vh;
+    }
+    .main-class.hidden {
+        --thumbnails-img-width: 20vw;
+        --thumbnails-img-height: 15vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
+    }
     .logo {
         font-size: 1.8em;
     }
-    .hidden .thumbnails-list {
-        max-height: 90vh;
-        margin-bottom: 12vh;
-    }
+
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -175,12 +187,17 @@ body {
         order: -1;
         justify-content: flex-start;
     }
-    
-    .main-class {
-        flex-direction: row;
-        justify-content: space-around;
+
+    .hidden .thumbnails-list {
+        margin-top: 12vh;
+       flex-direction: row;
+       flex-wrap: wrap;
+        margin-bottom: 12vh;
+        margin-right: 0;
+
 
     }
+
 
     .details-image {
         width: 45vw;
