@@ -223,12 +223,12 @@ body {
         .main-class {
             flex-direction: row;
             justify-content: space-around;
-            max-height: 75vh;
+            max-height: 85vh;
         }
         .main-class.hidden {
             --thumbnails-img-width: 20vw;
             --thumbnails-img-height: 15vw;
-            --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
+          
         }
         .thumbnails-list {
             padding-right: 2vw;
