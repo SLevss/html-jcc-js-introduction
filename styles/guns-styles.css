@@ -109,7 +109,11 @@ body {
 .thumbnails-list {
     list-style: none;
     display: flex;
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 25vh;
+    overflow-y: auto;
+    justify-content: space-around;
     padding-left: 0;
 
 }
@@ -183,22 +187,17 @@ body {
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
-        max-height: 75vh;
+       
         order: -1;
         justify-content: flex-start;
     }
-
     .hidden .thumbnails-list {
-        margin-top: 12vh;
-       flex-direction: row;
-       flex-wrap: wrap;
-        margin-bottom: 12vh;
-        margin-right: 0;
-
-
-    }
-
-
+       
+        flex-direction: row;
+        flex-wrap: wrap;
+       
+     }
+    
     .details-image {
         width: 45vw;
         height: 38vw;
