@@ -198,6 +198,10 @@ body {
 
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content;
+        max-height: 80vh;
+        margin-bottom: 0;
+        margin-left: 2vw;
 
     }
 
