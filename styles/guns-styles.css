@@ -88,10 +88,10 @@ body {
     font-family: airstream;
     font-style: italic;
     background-color: beige;
-    position: absolute;
-    font-size: 2em;
+    position: relative;
+    font-size: 1.2em;
     left: 0;
-    bottom: 2vh;
+    bottom: 7vh;
 
 
 
