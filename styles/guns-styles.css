@@ -75,11 +75,13 @@ body {
 .hide-button {
     position: absolute;
     background-color: rgb(194, 23, 35);
+    /*
     top: 15vh;
     right: 15vw;
+    */
     border-radius: 25%;
-    
-   
+
+
 }
 
 .details-image {
@@ -213,10 +215,6 @@ body {
             padding-right: 2vw;
             margin-top: 2.5vh;
             max-height: 86vh;
-        }
-
-        .thumbnails-title {
-            font-size: 1.5em;
         }
 
         .details-container {
