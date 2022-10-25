@@ -12,7 +12,7 @@ const IS_POINT = "is-point";
 function setDetails(anchor) {
     detailsImage.setAttribute('src', anchor.getAttribute('data-details-image'));
     detailsTitle.innerHTML = anchor.getAttribute('data-details-title');
-    playPause(1);
+    //playPause(1);
     audio.setAttribute('src', anchor.getAttribute('data-details-audio'));
 
 }
