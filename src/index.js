@@ -40,7 +40,7 @@ function hideDetails() {
 }
 function playPause(i) {
    
-   var audio = document.getElementsByTagName("audio")[i];
+    const audio = document.getElementsByTagName("audio")[i];
     if (audio.paused)
         audio.play();
     else
