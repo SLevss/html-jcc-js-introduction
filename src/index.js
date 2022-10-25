@@ -12,17 +12,17 @@ const IS_POINT = "is-point";
 function setDetails(anchor) {
     detailsImage.setAttribute('src', anchor.getAttribute('data-details-image'));
     detailsTitle.innerHTML = anchor.getAttribute('data-details-title');
-   
+
 }
 
 for (let i = 0; i < anchors.length; i++) {
     anchors[i].addEventListener("click", function () {
         console.log("event - click on ", anchors[i]);
+
         showDetails();
-        playPause() ;
 
         setDetails(anchors[i]);
-        
+        playPause();
 
     })
 }
@@ -38,9 +38,9 @@ function hideDetails() {
     mainClass.classList.add(HIDDEN);
 }
 function playPause() {
-    var audio = document.getElementsByTagName('audio')[0];
+    const audio = document.getElementsByTagName("audio")[0];
     if (audio.paused)
-    audio.play();
+        audio.play();
     else
-    audio.pause();
-    }
+        audio.pause();
+}
