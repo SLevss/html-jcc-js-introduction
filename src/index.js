@@ -20,9 +20,9 @@ for (let i = 0; i < anchors.length; i++) {
         console.log("event - click on ", anchors[i]);
 
         showDetails();
-
-        setDetails(anchors[i]);
         playPause(i);
+        setDetails(anchors[i]);
+       
 
     })
 }
