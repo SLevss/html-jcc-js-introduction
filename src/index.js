@@ -24,7 +24,7 @@ for (let i = 0; i < anchors.length; i++) {
         showDetails();
         playPause(i);
         setDetails(anchors[i]);
-
+        
 
     })
 }
