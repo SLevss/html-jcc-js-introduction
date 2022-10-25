@@ -22,7 +22,7 @@ for (let i = 0; i < anchors.length; i++) {
         showDetails();
 
         setDetails(anchors[i]);
-        playPause();
+        playPause(i);
 
     })
 }
@@ -36,11 +36,14 @@ function showDetails() {
 }
 function hideDetails() {
     mainClass.classList.add(HIDDEN);
+   
 }
-function playPause() {
-    const audio = document.getElementsByTagName("audio")[0];
+function playPause(i) {
+   
+   var audio = document.getElementsByTagName("audio")[i];
     if (audio.paused)
         audio.play();
     else
         audio.pause();
+    
 }
