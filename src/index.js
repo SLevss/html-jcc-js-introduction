@@ -22,7 +22,7 @@ for (let i = 0; i < anchors.length; i++) {
         console.log("event - click on ", anchors[i]);
 
         showDetails();
-        playPause(i);
+       // playPause(i);
         setDetails(anchors[i]);
         
 
@@ -31,6 +31,7 @@ for (let i = 0; i < anchors.length; i++) {
 function showDetails() {
     mainClass.classList.remove(HIDDEN);
     detailsContainer.classList.add(IS_POINT);
+    playPause();
     setTimeout(function () {
         detailsContainer.classList.remove(IS_POINT);
     }, 1)
@@ -40,9 +41,9 @@ function hideDetails() {
     mainClass.classList.add(HIDDEN);
 
 }
-function playPause(i) {
+function playPause() {
 
-    const audio = document.getElementsByTagName("audio")[i];
+    const audio = document.getElementsByTagName("audio")[0];
     if (audio.paused)
         audio.play();
     else
