@@ -23,38 +23,20 @@ function setDetails(anchor) {
 for (let i = 0; i < anchors.length; i++) {
     anchors[i].addEventListener("click", function () {
         console.log("event - click on ", anchors[i]);
-
-        showDetails();
-       
         setDetails(anchors[i]);
-        
-
+        showDetails();
     })
 }
 function showDetails() {
     mainClass.classList.remove(HIDDEN);
     detailsContainer.classList.add(IS_POINT);
-  
+
     setTimeout(function () {
         detailsContainer.classList.remove(IS_POINT);
     }, 1)
-   
+
 }
 function hideDetails() {
     mainClass.classList.add(HIDDEN);
 
 }
-/*
-function Pause() {
-
-    setTimeout(function () {
-        audio.Pause();
-    }, 5000)
-
-}
-function play() {
-  
-        audio.play();
-    
-}
-*/
