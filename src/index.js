@@ -9,12 +9,15 @@ const audio = document.querySelector(".details-audio");
 const HIDDEN = "hidden";
 const IS_POINT = "is-point";
 
+
 function setDetails(anchor) {
     detailsImage.setAttribute('src', anchor.getAttribute('data-details-image'));
     detailsTitle.innerHTML = anchor.getAttribute('data-details-title');
-    //playPause(1);
     audio.setAttribute('src', anchor.getAttribute('data-details-audio'));
-
+    audio.play();
+    setTimeout(function () {
+        audio.Pause();
+    }, 5000)
 }
 
 for (let i = 0; i < anchors.length; i++) {
@@ -22,7 +25,7 @@ for (let i = 0; i < anchors.length; i++) {
         console.log("event - click on ", anchors[i]);
 
         showDetails();
-        playPause(i);
+       
         setDetails(anchors[i]);
         
 
@@ -31,22 +34,27 @@ for (let i = 0; i < anchors.length; i++) {
 function showDetails() {
     mainClass.classList.remove(HIDDEN);
     detailsContainer.classList.add(IS_POINT);
-   // playPause();
+  
     setTimeout(function () {
         detailsContainer.classList.remove(IS_POINT);
     }, 1)
-
+   
 }
 function hideDetails() {
     mainClass.classList.add(HIDDEN);
 
 }
-function playPause(i) {
+/*
+function Pause() {
 
-    const audio = document.getElementsByTagName("audio")[i];
-    if (audio.paused)
-        audio.play();
-    else
-        audio.pause();
+    setTimeout(function () {
+        audio.Pause();
+    }, 5000)
 
 }
+function play() {
+  
+        audio.play();
+    
+}
+*/
