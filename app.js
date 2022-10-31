@@ -20,7 +20,7 @@ function fromStringToNumber(string, base) {
 
     let result = parseInt(string, base);
     if (isNaN(result)) {
-        return String.fromCharCode(string);
+        return String.fromCharCode(base);
     }
     else {
         return result;
