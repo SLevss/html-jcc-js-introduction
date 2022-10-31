@@ -20,7 +20,7 @@ function fromNumberToString(number, base) {
 console.log(fromNumberToString(900550, 36));
 console.log(fromNumberToString(46016237, 36));
 console.log(fromNumberToString(11483, 2));
-console.log(fromNumberToString(123, 40));
+
 
 //************************************************************************ */
 
