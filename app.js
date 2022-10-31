@@ -1,3 +1,4 @@
+
 function fromNumberToString(number, base) {
     number = Math.abs(number);
     let res = "";
