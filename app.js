@@ -25,12 +25,16 @@ console.log(fromNumberToString(11483, 2));
 //************************************************************************ */
 
 function fromStringToNumber(string, base) {
+   
     let res = "";
     if (base > 36 || base < 2) {
         console.log("ERROR");
     }
+    else if (typeof string == "number") {
+        console.log("ERROR");
+    }
     else {
-    res = parseInt(string, base);
+        res = parseInt(string, base);
         return res;
     }
 }
