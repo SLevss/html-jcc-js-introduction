@@ -25,14 +25,13 @@ console.log(fromNumberToString(11483, 2));
 //************************************************************************ */
 
 function fromStringToNumber(string, base) {
-
-    let result = parseInt(string, base);
-
-    if (isNaN(result)) {
-        return String.fromCharCode(base);
+    let res = "";
+    if (base > 36 || base < 2) {
+        console.log("ERROR");
     }
     else {
-        return result;
+    res = parseInt(string, base);
+        return res;
     }
 }
 
