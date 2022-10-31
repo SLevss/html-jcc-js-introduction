@@ -1,16 +1,30 @@
-function sumDigits(number) {
-    if (number < 0)
-        number = -number;
+function fromNumberToString(number, base) {
+    number = Math.abs(number);
+    let res = "";
+    do {
+        let digit = number % base;
+        res += digit.toString(base);
+        number = Math.trunc(number / base);
+    } while (number != 0);
 
-    let rem = 0;
-    let sum = 0;
-    while (number != 0) {
-        rem = number % 10;
-
-        sum = sum + rem;
-        number = Math.floor(number / 10);
-
-    }
-    return sum;
+    return res.split("").reverse().join("");
 }
-console.log(sumDigits(123))
+console.log(fromNumberToString(900550, 36));
+console.log(fromNumberToString(46016237, 36));
+console.log(fromNumberToString(11483, 2));
+
+//************************************************************************ */
+
+function fromStringToNumber(string, base) {
+
+    let result = parseInt(string, base);
+    if (isNaN(result)) {
+        return String.fromCharCode(string);
+    }
+    else {
+        return result;
+    }
+}
+console.log(fromStringToNumber("JAVA", 36));
+console.log(fromStringToNumber("react’", 36));
+console.log(fromStringToNumber("10110011011011’", 2));
