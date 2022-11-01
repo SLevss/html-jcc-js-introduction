@@ -26,7 +26,7 @@ console.log(fromNumberToString(11483, 2));
 
 function fromStringToNumber(string, base) {
    
-    let res = "";
+    
     if (base > 36 || base < 2) {
         console.log("ERROR");
     }
@@ -35,11 +35,11 @@ function fromStringToNumber(string, base) {
     }
     else {
         res = parseInt(string, base);
-        if (isNaN(result)) {
+        if (isNaN(res)) {
             return String.fromCharCode(base);
         }
         else {
-            return result;
+            return res;
         }
     }
 }
