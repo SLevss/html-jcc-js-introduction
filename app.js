@@ -8,14 +8,18 @@ function fromNumberToString(number, base) {
     else {
         do {
             let digit = number % base;
-            res += digit.toString(base);
+            if (digit > 9) {
+                digit = String.fromCharCode(55 + digit);
+            }
+
+            res = digit + res;
             number = Math.trunc(number / base);
         } while (number != 0);
 
     }
 
 
-    return res.split("").reverse().join("");
+    return res;
 }
 console.log(fromNumberToString(900550, 36));
 console.log(fromNumberToString(46016237, 36));
