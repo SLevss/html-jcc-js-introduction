@@ -11,7 +11,7 @@ function fromNumberToString(number, base) {
             if (digit > 9) {
                 digit = String.fromCharCode(55 + digit);
             }
-
+            
             res = digit + res;
             number = Math.trunc(number / base);
         } while (number != 0);
