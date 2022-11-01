@@ -25,8 +25,8 @@ console.log(fromNumberToString(11483, 2));
 //************************************************************************ */
 
 function fromStringToNumber(string, base) {
-   
-    
+
+
     if (base > 36 || base < 2) {
         console.log("ERROR");
     }
