@@ -35,7 +35,12 @@ function fromStringToNumber(string, base) {
     }
     else {
         res = parseInt(string, base);
-        return res;
+        if (isNaN(result)) {
+            return String.fromCharCode(base);
+        }
+        else {
+            return result;
+        }
     }
 }
 
