@@ -1,10 +1,10 @@
 //-------------------------check Teudat Zehut----------------------------------
-function checkTeudatZehut(TeudatZehut) {
+function checkTeudatZehut(teudatZehut) {
 
-    if (TeudatZehut.length != 9 || isNaN(TeudatZehut)) return false;
+    if (teudatZehut.length != 9 || isNaN(teudatZehut)) return false;
+    
 
-
-    let arTeudatNumber = inArray(TeudatZehut);
+    let arTeudatNumber = inArray(teudatZehut);
 
     let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
         if (index % 2 !== 0) return sumDigits(digit * 2);
@@ -16,10 +16,10 @@ function checkTeudatZehut(TeudatZehut) {
     let controlSumm = newarTeudatNumber.reduce((partSum, ind) => partSum + ind, 0);
     console.log("Checksum =", controlSumm);
     if (controlSumm % 10 == 0) {
-        console.log("Teudat Zehut valid with number", TeudatZehut);
+        console.log("Teudat Zehut valid with number", teudatZehut);
     }
     if (controlSumm % 10 !== 0) {
-        console.log("Teudat Zehut not valid with number", TeudatZehut);
+        console.log("Teudat Zehut not valid with number", teudatZehut);
     }
 }
 
