@@ -1,7 +1,7 @@
 //-------------------------check Teudat Zehut----------------------------------
 function checkTeudatZehut(teudatZehut) {
 
-    if (teudatZehut.length != 9 || isNaN(teudatZehut)) return false;
+    if (teudatZehut.length != 9 || isNaN(teudatZehut)) return "ERROR";
     
 
     let arTeudatNumber = inArray(teudatZehut);
