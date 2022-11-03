@@ -1,22 +1,20 @@
 //-------------------------check Teudat Zehut----------------------------------
 function checkTeudatZehut(TeudatZehut) {
 
-    if (TeudatZehut.length != 9 ) {
+    if (TeudatZehut.length != 9) {
         return false;
     }
     if (isNaN(TeudatZehut)) {
         return false;
     }
-   
-    let arTeudatNumber = inArray(TeudatZehut);
-    console.log(arTeudatNumber);
-    let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
 
+    let arTeudatNumber = inArray(TeudatZehut);
+
+    let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
         if (index % 2 !== 0) return sumDigits(digit * 2);
         else return sumDigits(digit);
-
     });
-    console.log(newarTeudatNumber);
+
     let res = 0;
     const controlSumm = newarTeudatNumber.reduce((partSum, x) => partSum + x, 0);
     console.log("Checksum =", controlSumm);
@@ -28,7 +26,10 @@ function checkTeudatZehut(TeudatZehut) {
     }
 }
 console.log(checkTeudatZehut('123456782'));
-
+console.log(checkTeudatZehut('346698004'));
+// F.ex.
+console.log(checkTeudatZehut('123456789'));
+console.log(checkTeudatZehut('12345678995'));
 function inArray(teudatNumber) {
 
     let arTeudatNumber = Array.from(teudatNumber);
