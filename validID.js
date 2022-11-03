@@ -23,7 +23,6 @@ function checkTeudatZehut(TeudatZehut) {
 }
 console.log(checkTeudatZehut('123456782'));
 console.log(checkTeudatZehut('346698004'));
-// F.ex
 console.log(checkTeudatZehut('123456789'));
 console.log(checkTeudatZehut('34669800410'));
 
