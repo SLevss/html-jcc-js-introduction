@@ -1,17 +1,17 @@
 //-------------------------check Teudat Zehut----------------------------------
 function checkTeudatZehut(TeudatZehut) {
 
-  if (TeudatZehut.length != 9 || isNaN(TeudatZehut)) return false; 
-   
-    
+    if (TeudatZehut.length != 9 || isNaN(TeudatZehut)) return false;
+
+
     let arTeudatNumber = inArray(TeudatZehut);
-   
+
     let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
         if (index % 2 !== 0) return sumDigits(digit * 2);
         else return sumDigits(digit);
 
     });
-   
+
     let res = 0;
     let controlSumm = newarTeudatNumber.reduce((partSum, x) => partSum + x, 0);
     console.log("Checksum =", controlSumm);
@@ -31,7 +31,7 @@ function sumDigits(digit) {
 
     let sum = 0;
     while (digit != 0) {
-       
+
         sum = sum + (digit % 10);
         digit = Math.floor(digit / 10);
 
