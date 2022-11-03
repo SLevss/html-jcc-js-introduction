@@ -22,11 +22,6 @@ function checkTeudatZehut(TeudatZehut) {
         console.log("Teudat Zehut not valid with number", TeudatZehut);
     }
 }
-console.log(checkTeudatZehut('123456782'));
-console.log(checkTeudatZehut('346698004'));
-console.log(checkTeudatZehut('123456789'));
-console.log(checkTeudatZehut('34669800410'));
-console.log(checkTeudatZehut('123456782a'));
 
 function inArray(teudatNumber) {
     let arTeudatNumber = Array.from(teudatNumber);
@@ -43,3 +38,8 @@ function sumDigits(digit) {
     }
     return sum;
 }
+console.log(checkTeudatZehut('123456782'));
+console.log(checkTeudatZehut('346698004'));
+console.log(checkTeudatZehut('123456789'));
+console.log(checkTeudatZehut('34669800410'));
+console.log(checkTeudatZehut('123456782a'));
