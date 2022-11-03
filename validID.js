@@ -13,7 +13,7 @@ function checkTeudatZehut(TeudatZehut) {
     });
 
     let res = 0;
-    let controlSumm = newarTeudatNumber.reduce((partSum, x) => partSum + x, 0);
+    let controlSumm = newarTeudatNumber.reduce((partSum, ind) => partSum + ind, 0);
     console.log("Checksum =", controlSumm);
     if (controlSumm % 10 == 0) {
         console.log("Teudat Zehut valid with number", TeudatZehut);
