@@ -33,12 +33,10 @@ function inArray(teudatNumber) {
 }
 function sumDigits(digit) {
 
-    let rem = 0;
     let sum = 0;
     while (digit != 0) {
-        rem = digit % 10;
-
-        sum = sum + rem;
+       
+        sum = sum + (digit % 10);
         digit = Math.floor(digit / 10);
 
     }
