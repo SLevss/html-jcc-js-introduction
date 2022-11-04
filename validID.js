@@ -1,15 +1,13 @@
 //-------------------------check Teudat Zehut----------------------------------
 function checkTeudatZehut(teudatZehut) {
 
-    if (teudatZehut.length != 9 || isNaN(teudatZehut)) return "ERROR";
-    
+    if (teudatZehut.length != 9 || isNaN(+teudatZehut)) return "ERROR";
+
 
     let arTeudatNumber = inArray(teudatZehut);
 
     let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
-        if (index % 2 !== 0) return sumDigits(digit * 2);
-        else return sumDigits(digit);
-
+        return index % 2 !== 0 ? sumDigits(digit * 2) : sumDigits(digit);
     });
 
     let res = 0;
