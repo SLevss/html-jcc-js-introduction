@@ -1,12 +1,11 @@
 //-------------------------check Teudat Zehut----------------------------------
+const anyDigits = '012345678';
 function checkTeudatZehut(teudatZehut) {
-
-    if (teudatZehut.length != 9 || isNaN(+teudatZehut)) return "ERROR";
-
-
-    let arTeudatNumber = inArray(teudatZehut);
-
-    let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
+    if (teudatZehut.length != anyDigits.length || isNaN(+teudatZehut)) {
+        console.log("Teudat Zehut = ",teudatZehut, '= ', false);
+        return false;
+    }
+    let newarTeudatNumber = inArray(teudatZehut).map((digit, index) => {
         return (index % 2 !== 0) ? sumDigits(digit * 2) : sumDigits(digit);
     });
 
