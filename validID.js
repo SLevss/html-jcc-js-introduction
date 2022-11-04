@@ -2,14 +2,13 @@
 const anyDigits = '012345678';
 function checkTeudatZehut(teudatZehut) {
     if (teudatZehut.length != anyDigits.length || isNaN(+teudatZehut)) {
-        console.log("Teudat Zehut = ",teudatZehut, '= ', false);
+        console.log("Teudat Zehut = ", teudatZehut, '= ', false);
         return false;
     }
     let newarTeudatNumber = inArray(teudatZehut).map((digit, index) => {
         return (index % 2 !== 0) ? sumDigits(digit * 2) : sumDigits(digit);
     });
 
-    let res = 0;
     let controlSumm = newarTeudatNumber.reduce((partSum, ind) => partSum + ind, 0);
     console.log("Checksum =", controlSumm);
     if (controlSumm % 10 == 0) {
