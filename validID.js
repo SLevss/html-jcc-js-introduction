@@ -7,7 +7,7 @@ function checkTeudatZehut(teudatZehut) {
     let arTeudatNumber = inArray(teudatZehut);
 
     let newarTeudatNumber = arTeudatNumber.map((digit, index) => {
-        return index % 2 !== 0 ? sumDigits(digit * 2) : sumDigits(digit);
+        return (index % 2 !== 0) ? sumDigits(digit * 2) : sumDigits(digit);
     });
 
     let res = 0;
