@@ -15,10 +15,11 @@ function checkTeudatZehut(teudatZehut) {
     if (controlSumm % 10 == 0) {
         console.log("Teudat Zehut valid with number", teudatZehut);
         return true;
-    }else{
+    } else {
+        console.log("Teudat Zehut not valid with number", teudatZehut);
         return false;
     }
-   
+
 }
 
 
@@ -52,14 +53,12 @@ function generateRandomTeudatZehut() {
     }
 
     return teudatNumber + (10 - (counter % 10));
-    
+
 }
-    
-  
 
 function getInc(number, i) {
 
-    let inc = Number(number) * ((i % 2) + 1);
+    let inc = number * ((i % 2) + 1);
     return (inc > 9) ? inc -= 9 : inc;
 
 }
