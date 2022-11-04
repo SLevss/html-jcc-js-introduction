@@ -15,6 +15,8 @@ function checkTeudatZehut(teudatZehut) {
     if (controlSumm % 10 == 0) {
         console.log("Teudat Zehut valid with number", teudatZehut);
         return true;
+    }else{
+        return false;
     }
    
 }
