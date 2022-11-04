@@ -5,7 +5,7 @@ function checkTeudatZehut(teudatZehut) {
         console.log("Teudat Zehut = ", teudatZehut, '= ', false);
         return false;
     }
-    let newarTeudatNumber = inArray(teudatZehut).map((digit, index) => {
+    let newarTeudatNumber = Array.from(teudatZehut).map((digit, index) => {
         return (index % 2 !== 0) ? sumDigits(digit * 2) : sumDigits(digit);
     });
 
@@ -19,10 +19,7 @@ function checkTeudatZehut(teudatZehut) {
     }
 }
 
-function inArray(teudatNumber) {
-    let arTeudatNumber = Array.from(teudatNumber);
-    return arTeudatNumber;
-}
+
 function sumDigits(digit) {
 
     let sum = 0;
