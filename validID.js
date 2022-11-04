@@ -5,7 +5,7 @@ function checkTeudatZehut(teudatZehut) {
         console.log("Teudat Zehut = ", teudatZehut, '= ', false);
         return false;
     }
-    
+
     let newarTeudatNumber = Array.from(teudatZehut).map((digit, index) => {
         return (index % 2 !== 0) ? sumDigits(digit * 2) : sumDigits(digit);
     });
@@ -33,7 +33,6 @@ function sumDigits(digit) {
 }
 console.log(checkTeudatZehut('123456782'));
 console.log(checkTeudatZehut('346698004'));
-console.log(checkTeudatZehut('123456789'));
 console.log(checkTeudatZehut('34669800410'));
 console.log(checkTeudatZehut('123456782a'));
 console.log(checkTeudatZehut(generateRandomTeudatZehut()));
