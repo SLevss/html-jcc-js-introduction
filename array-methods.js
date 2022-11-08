@@ -47,8 +47,8 @@ let array1 = [1, 2, 3, 4, 5, 6, 7];
 let array2 = [1, 2, 3, 4, 5, 6, 7];
 move(array1,3,-1);
 move(array2,2,4);
-console.log(array1);
-console.log(array2);
+console.log("Output array: " + array1);
+console.log("Output array: " + array2);
 
 function move(array, index, offset) {
    let element = array.splice(index,1)[0];
