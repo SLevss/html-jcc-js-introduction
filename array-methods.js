@@ -43,16 +43,16 @@ function arrayCopy(src, srcPos, dst, dstPos, length) {
 
 console.log(arrayCopy([1, 2, 3, 4, 5, 6, 7], 3, [10, 20, 30, 40, 50, 60, 70], 4, 3));
 
+let array1 = [1, 2, 3, 4, 5, 6, 7];
+let array2 = [1, 2, 3, 4, 5, 6, 7];
+move(array1,3,-1);
+move(array2,2,4);
+console.log(array1);
+console.log(array2);
+
 function move(array, index, offset) {
-  let newArray = [];
-  newArray.push.apply(newArray, array);
-  let element = newArray[index];
-  newArray.splice(index, 1);
-  newArray.splice(index+offset, 0, element);
-  
-  return newArray;
+   let element = array.splice(index,1)[0];
+  array.splice(index+offset, 0, element);
  
 }
 
-console.log(move([1, 2, 3, 4, 5, 6, 7], 3, -1));
-console.log(move([1, 2, 3, 4, 5, 6, 7], 2, 4));
