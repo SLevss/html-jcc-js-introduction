@@ -30,9 +30,8 @@ function deleteWithPrefix(strings, prefix) {
   let slice = function (strings) {
     return strings.slice(0, prefix.length);
   };
-  let newString = strings.map(slice).filter(value => value !== prefix);
-  return newString;
-}
+  return strings.map(slice).filter(value => value !== prefix);
+  }
 
 //----------3.Write function getSortedEvenOdd(numbers)------------
 
