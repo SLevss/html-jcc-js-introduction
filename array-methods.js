@@ -1,58 +1,50 @@
-function ulSurround() {
+//----------- 1.Write function minMax(numbers) ----------------
+let numbers = [1, 2, 3, 4, 5];
+console.log('Input array =', numbers);
+console.log('Output array =', minMax(numbers));
 
-  let strings = ["abc", "lmn", "cd"];
-  let newLastElement = "</ul>";
-  let ulSurround = strings.map(function (strings) {
-    return "<li>" + strings + "</li>";
-  }).join('","');
-   let ulSurrounding = plusElements(ulSurround);
-  return ulSurrounding;
-
-};
-
-console.log(ulSurround());
-
-function plusElements(ulSurround) {
-  let newFirstElement = "<ul>";
-  let newLastElement = "</ul>";
-  let ulSurrounding = [newFirstElement].concat(ulSurround);
-  ulSurrounding.push(newLastElement);
-  return ulSurrounding;
+function minMax(numbers) {
+  let minElement = arrayMin(numbers);
+  let maxElement = arrayMax(numbers);
+  let result = [];
+  result.unshift(minElement);
+  result.push(maxElement);
+  return result;
 }
 
-function count(strings, str) {
-  return strings.reduce((count, el) => count + (el == str), 0);
+function arrayMin(numbers) {
+  return numbers.reduce(function (x, y) {
+    return (x < y ? x : y);
+  });
+}
+function arrayMax(numbers) {
+  return numbers.reduce(function (x, y) {
+    return (x > y ? x : y);
+  });
+}
+//----------2.Write function deleteWithPrefix(strings, prefix)-----
+let strings = ['abc', 'old_abc', 'lmn', '123', 'old_lmn'];
+let prefix = 'old_';
+console.log('Output array without prefix =', deleteWithPrefix(strings, prefix));
+function deleteWithPrefix(strings, prefix) {
+  let slice = function (strings) {
+    return strings.slice(0, prefix.length);
+  };
+  let newString = strings.map(slice).filter(value => value !== prefix);
+  return newString;
 }
 
-let strings = ["abc", "lmn", "cd", "abc", "abc"];
-let str = "abc";
-console.log(str + " element encountered in array [" + strings + "]  " + count(strings, str));
+//----------3.Write function getSortedEvenOdd(numbers)------------
 
-str = "ab";
-console.log(str + " element encountered in array [" + strings + "]  " + count(strings, str));
+numbers = [1, 6, 3, 8, 5, 2, 7, 4];
+console.log('Input array =', numbers);
+console.log('Output array sorted  =', getSortedEvenOdd(numbers));
 
-function arrayCopy(src, srcPos, dst, dstPos, length) {
-
-  let newMediumArray = src.slice(srcPos, srcPos + length);//4,5,6
-  let newLastArray = dst.slice((dstPos)); //50,60,70
-  dst = dst.slice(0, dstPos).concat(newMediumArray).concat(newLastArray); //
-
-
-  return dst;
+function getSortedEvenOdd(numbers) {
+  let evenResult = numbers.filter(elem => elem % 2 == 0).sort();
+  let oddResult = numbers.filter(elem => elem % 2 !== 0).sort();
+  let result = [];
+  result.unshift(evenResult);
+  result.push(oddResult);
+  return result;
 }
-
-console.log(arrayCopy([1, 2, 3, 4, 5, 6, 7], 3, [10, 20, 30, 40, 50, 60, 70], 4, 3));
-
-let array1 = [1, 2, 3, 4, 5, 6, 7];
-let array2 = [1, 2, 3, 4, 5, 6, 7];
-move(array1,3,-1);
-move(array2,2,4);
-console.log("Output array: " + array1);
-console.log("Output array: " + array2);
-
-function move(array, index, offset) {
-   let element = array.splice(index,1)[0];
-  array.splice(index+offset, 0, element);
- 
-}
-
