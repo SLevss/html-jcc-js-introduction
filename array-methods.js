@@ -4,24 +4,10 @@ console.log('Input array =', numbers);
 console.log('Output array =', minMax(numbers));
 
 function minMax(numbers) {
-  let minElement = arrayMin(numbers);
-  let maxElement = arrayMax(numbers);
-  let result = [];
-  result.unshift(minElement);
-  result.push(maxElement);
-  return result;
+  return numbers.reduce((num,elem)=> { if(elem<num[0]){num[0]=elem;} if (elem>num[1]){num[1]=elem;} return num;},[numbers[0],numbers[0]]);
 }
 
-function arrayMin(numbers) {
-  return numbers.reduce(function (x, y) {
-    return (x < y ? x : y);
-  });
-}
-function arrayMax(numbers) {
-  return numbers.reduce(function (x, y) {
-    return (x > y ? x : y);
-  });
-}
+
 //----------2.Write function deleteWithPrefix(strings, prefix)-----
 let strings = ['abc', 'old_abc', 'lmn', '123', 'old_lmn'];
 let prefix = 'old_';
