@@ -22,8 +22,8 @@ function deleteWithPrefix(strings, prefix) {
 //----------3.Write function getSortedEvenOdd(numbers)------------
 
 numbers = [1, 6, 3, 8, 5, 2, 7, 4];
-console.log('Input array =', numbers);
-console.log('Output array sorted  =', getSortedEvenOdd(numbers));
+console.log(`Input array: ${numbers}`);
+console.log(`Output array sorted: ${getSortedEvenOdd(numbers)}`);
 
 function getSortedEvenOdd(numbers) {
   newArray = numbers.slice();
