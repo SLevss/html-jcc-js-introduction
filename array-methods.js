@@ -26,10 +26,6 @@ console.log('Input array =', numbers);
 console.log('Output array sorted  =', getSortedEvenOdd(numbers));
 
 function getSortedEvenOdd(numbers) {
-  let evenResult = numbers.filter(elem => elem % 2 == 0).sort();
-  let oddResult = numbers.filter(elem => elem % 2 !== 0).reverse();
-  let result = [];
-  result.unshift(evenResult);
-  result.push(oddResult);
-  return result;
+  newArray = numbers.slice();
+  return newArray.sort((x,y) => { return x % 2 == 0 && x < y ? -1: y % 2 == 0 ? 1: y - x;});
 }
