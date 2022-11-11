@@ -1,8 +1,7 @@
 //----------- 1.Write function minMax(numbers) ----------------
 let numbers = [1, 2, 3, 4, 5];
-console.log('Input array =', numbers);
-console.log('Output array =', minMax(numbers));
-
+console.log(`Input array: ${numbers}`);
+console.log(`Output array: ${minMax(numbers)}`);
 function minMax(numbers) {
   return numbers.reduce((num,elem)=> { if(elem<num[0]){num[0]=elem;} if (elem>num[1]){num[1]=elem;} return num;},[numbers[0],numbers[0]]);
 }
@@ -11,7 +10,8 @@ function minMax(numbers) {
 //----------2.Write function deleteWithPrefix(strings, prefix)-----
 let strings = ['abc', 'old_abc', 'lmn', '123', 'old_lmn'];
 let prefix = 'old_';
-console.log('Output array without prefix =', deleteWithPrefix(strings, prefix));
+console.log(`Input array: ${strings}`);
+console.log(`Output array without prefix: ${deleteWithPrefix(strings, prefix)}`);
 function deleteWithPrefix(strings, prefix) {
   let slice = function (strings) {
     return strings.slice(0, prefix.length);
