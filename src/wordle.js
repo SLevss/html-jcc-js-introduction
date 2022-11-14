@@ -3,6 +3,7 @@ const N_LETTERS = 5;
 const letterElements = document.querySelectorAll(".letter-guess");
 let guesses = document.querySelector('.guesses');
 let lastResult = document.querySelector('.lastResult');
+let numGuesses = 6;
 let guessCount = 1;
 
 
@@ -19,7 +20,6 @@ function onChange(event) {
             let res = 'red';
             if (index > -1) {
                 res = index == i ? 'green' : 'yellow';
-
             }
             return res;
         })
@@ -30,15 +30,14 @@ function onChange(event) {
     if (wordGuess === word) {
         lastResult.textContent = 'Congratulations! You guessed the word!';
         lastResult.style.backgroundColor = 'green';
-        guessCount = 1;
-    } else if (guessCount === 6) {
+    } else if (guessCount === numGuesses) {
         lastResult.textContent = '!!!Your attempts to guess are over!!!';
         lastResult.style.backgroundColor = 'red';
-        guessCount = 1;
-       
+
     } else {
         lastResult.textContent = 'Wrong!';
         lastResult.style.backgroundColor = 'red';
     }
-       guessCount++;
+    guessCount++;
+
 }
