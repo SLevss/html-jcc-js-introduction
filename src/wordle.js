@@ -3,8 +3,7 @@ const N_LETTERS = 5;
 const letterElements = document.querySelectorAll(".letter-guess");
 let guesses = document.querySelector('.guesses');
 let lastResult = document.querySelector('.lastResult');
-let numGuesses = 6;
-let guessCount = 1;
+let guessCount = 6;
 
 
 function onChange(event) {
@@ -14,7 +13,7 @@ function onChange(event) {
         alert(`A word should contain ${N_LETTERS} letters`)
     } else {
         const wordAr = Array.from(wordGuess);
-        wordAr.forEach((l, i) => letterElements[i].innerHTML = l)
+        wordAr.forEach((l, i) => letterElements[i].innerHTML = l);
         const colors = wordAr.map((l, i) => {
             let index = word.indexOf(l);
             let res = 'red';
@@ -30,14 +29,20 @@ function onChange(event) {
     if (wordGuess === word) {
         lastResult.textContent = 'Congratulations! You guessed the word!';
         lastResult.style.backgroundColor = 'green';
-    } else if (guessCount === numGuesses) {
+        guessCount=0;
+        return;
+    } else if (guessCount === 0) {
         lastResult.textContent = '!!!Your attempts to guess are over!!!';
         lastResult.style.backgroundColor = 'red';
-
+        guessCount=0;
+        return;
     } else {
+
         lastResult.textContent = 'Wrong!';
         lastResult.style.backgroundColor = 'red';
+        guesses.textContent = (`Do you have any attempts left: ${guessCount-1}`);
     }
-    guessCount++;
+
+    guessCount--;
 
 }
