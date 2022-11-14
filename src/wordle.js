@@ -34,7 +34,8 @@ function onChange(event) {
     } else if (guessCount === 0) {
         lastResult.textContent = '!!!Your attempts to guess are over!!!';
         lastResult.style.backgroundColor = 'red';
-        
+        guessCount=0;
+        return;
     } else {
 
         lastResult.textContent = 'Wrong!';
