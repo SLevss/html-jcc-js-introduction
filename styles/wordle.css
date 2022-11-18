@@ -1,18 +1,24 @@
-body{
-    display: flex;
+body {
+    display:flex;
     flex-direction: column;
     align-items: center;
+   
 }
-.word-guess{
+.word-guess {
     display: flex;
     flex-direction: row;
-}
-.letter-guess {
-    font-size: 1.5em;
-    margin-bottom: 2vw;
     
 }
-.lastResult {
-    color: white;
-    padding: 3px;
-  }
+.letter-guess {
+    font-size: 2em;
+    margin-left: 4vw;
+    background-color: black;
+    width: 3.5vw;
+    text-align: center;
+}
+.guess-moving{
+    font-size: 2em;
+}
+.game-over-message{
+    font-size: 5em;
+}
