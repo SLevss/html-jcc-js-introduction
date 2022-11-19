@@ -1,5 +1,5 @@
 const words = [["Types of JavaScript Operators", "arithmetic"], ["JavaScript Data Types", "strings"],
-["JavaScript Objects", "methods"], ["JavaScript - HTML DOM Methods", "innerHTML "]];
+["JavaScript Objects", "methods"]];
 
 let wordField;
 let seachWordsArray = [];
@@ -77,4 +77,4 @@ function endGame(isSuccess) {
     flGameOver = true;
     index = 0;
 }
-startGame()
+startGame();
