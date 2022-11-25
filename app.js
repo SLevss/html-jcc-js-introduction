@@ -57,7 +57,7 @@ function increaseSalary(array, borderSalary, percent) {
     let minSalary = array.filter(function (min) {
         return min.salary < borderSalary;
     }).map(function (min) {
-        return min.salary + (min.salary * 10 / 100);
+        return min.salary + (min.salary * percent / 100);
     });
     console.log(minSalary);
 
