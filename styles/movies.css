@@ -4,19 +4,16 @@ html {
     -webkit-font-smoothing: antialiased;
     line-height: normal;
 }
-
 body {
     display: flex;
     flex-direction: column;
 
 }
-
 .logo {
     display: block;
     text-align: center;
     font-size: 2.5em;
 }
-
 .movies-list {
     display: flex;
     width: 10px;
@@ -28,7 +25,6 @@ body {
     order: -1;
     justify-content: flex-start;
 }
-
 .movie-item {
     display: block;
     margin: 1vw;
@@ -39,9 +35,7 @@ body {
 
 .movie-image {
     max-height: 60vh;
-
 }
-
 .title {
     display: block;
     font-size:2em;
@@ -53,13 +47,11 @@ body {
     left: 65vh;
     bottom: 30vh;
 }
-
 .movie-description {
     position: relative;
     left: 70vh;
     bottom: 30vh;
 }
-
 .button {
     background-color: aqua;
 }
