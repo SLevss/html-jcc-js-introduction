@@ -1,0 +1,65 @@
+body,
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.movies-list {
+    display: flex;
+    width: 10px;
+    height: 20px;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-height: 75vh;
+    order: -1;
+    justify-content: flex-start;
+}
+
+.movie-item {
+    display: block;
+    margin: 1vw;
+    width: 100vh;
+    height: 50vh;
+
+}
+
+.movie-image {
+    max-height: 60vh;
+
+}
+
+.title {
+    display: block;
+    font-size:2em;
+    text-align: center;
+    height: auto;
+    position: relative;
+    background-color: rgb(220, 245, 235);
+    max-width: 20vh;
+    left: 65vh;
+    bottom: 30vh;
+}
+
+.movie-description {
+    position: relative;
+    left: 70vh;
+    bottom: 30vh;
+}
+
+.button {
+    background-color: aqua;
+}
