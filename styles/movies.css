@@ -3,17 +3,43 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     line-height: normal;
+    
 }
 body {
     display: flex;
     flex-direction: column;
+    background-color: azure;
+    margin: 0;
 
 }
 .logo {
+    font-size: 2em;
+    background-color: bisque;
     display: block;
     text-align: center;
-    font-size: 2.5em;
+    font-family: lakeshore;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 }
+.main-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+.main-class.hidden {
+    --thumbnails-img-width: 35vw;
+    --thumbnails-img-height: 25vw;
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33) 
+}
+.button-list{
+    position: fixed;
+    top: 3vh;
+    right: 3vw;
+   
+}
+
+
 .movies-list {
     display: flex;
     width: 10px;
@@ -21,7 +47,7 @@ body {
     position: relative;
     flex-direction: column;
     flex-wrap: nowrap;
-    max-height: 75vh;
+    max-height: 86vh;
     order: -1;
     justify-content: flex-start;
 }
@@ -54,4 +80,9 @@ body {
 }
 .button {
     background-color: aqua;
+}
+.section{
+    height: 75vh;
+  margin: 0;
+    scroll-margin-top: 1em;
 }
