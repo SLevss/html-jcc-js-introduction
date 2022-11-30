@@ -15,7 +15,7 @@ function getPosterImages(movie) {
         `<li class="movie-item"> 
             <img class="movie-image" src="${httpPrefix}${movie.backdrop_path}">
             <div class "movie-details>
-             <span  class="title" >${movie.original_title}></span>
+             <span  class="title" >${movie.original_title}</span>
             <span class = "movie-description">${movie.overview}</span>
          </div>
         </li>`);
@@ -34,7 +34,7 @@ function getPopularImages() {
     `<div class="movie-item"> 
         <img class="movie-image" src="${httpPrefix}${ulElementPop.poster_path}">
         <div class "movie-details>
-        <span  class="title" >${ulElementPop.original_title}></span>
+        <span  class="title" >${ulElementPop.original_title}</span>
         <span class = "movie-description">${ulElementPop.overview}</span>
     </div>`;
     return moviePop;
@@ -48,7 +48,7 @@ function getNotPopularImages() {
         "<div class="movie-item"> 
         <img class="movie-image" src="${httpPrefix}${ulElementNotPop.poster_path}">
     <div class "movie-details>
-         <span  class="title" >${ulElementNotPop.original_title}></span>
+         <span  class="title" >${ulElementNotPop.original_title}</span>
         <span class = "movie-description">${ulElementNotPop.overview}</span>
     </div>`;
     return moviePop;
