@@ -17,7 +17,7 @@ function getPosterImages(movie) {
             <div class "movie-details>
              <span  class="title" >${movie.original_title}></span>
             <p class = "movie-description">${movie.overview}</p>
-         <div>
+         </div>
         </li>`);
     return arImages.join('');
 }
