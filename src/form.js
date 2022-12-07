@@ -1,8 +1,8 @@
 const inputElements = document.querySelectorAll(".form-class [name]");
 const bouttonElements = document.querySelectorAll(".main-button");
 const errorElem = document.querySelector(".error");
-const sectionElem = document.querySelectorAll("section");
-const listElement = document.getElementById("employees-list");
+const sectionElem = document.querySelectorAll(".section");
+const listElement = document.querySelector(".employees-list");
 const salaryListElement = document.querySelector(".employees-list-salary");
 
 const minSalary = 1000;
