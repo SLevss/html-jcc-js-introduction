@@ -10,36 +10,63 @@
 </head>
 
 <body>
-    <form id="employee-form" onsubmit="onSubmit(event)" class="form-class">
-        <div class="two-inputs">
-            <input type="text" name="employee_name" required placeholder="Enter employee name">
-            <input type="email" name="email" placeholder="Enter email" required>
-        </div>
-        <div class="date-label">
-            <label>Enter birthdate</label>
-            <input type="date" name="birthDate" onchange="onChange(event)" required placeholder="birthdate">
-        </div>
-
-        <div class="two-inputs">
-            <select name="department" required>
-                <option value hidden selected disabled>
+    <header class="form-title">HW #22 COMPANY</header>
+    <div class="buttons">
+        <button onclick="show(0)" class="main-button">Add employee</button>
+        <button onclick="show(1)" class="main-button">Show all employees</button>
+        <button onclick="show(2)" class="main-button">Show employees by salary</button>
+    </div>
+    <section hidden class="employee-form">
+        <form id="employee-form" onsubmit="onSubmit(event)" class="form-class">
+            <div class="two-inputs">
+                <input type="text" name="employee_name" required placeholder="Enter employee name">
+                <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="date-label">
+                <label>Enter birthdate</label>
+                <input type="date" name="birthDate" required onchange="onChange(event)" placeholder="birthdate">
+            </div>
+            <p id="date_error" class="error"></p>
+            <div class="two-inputs">
+                <select name="department" required>
+                    <option value hidden selected disabled>
                         --Select Department--
-                </option>
-                <option value="QA">QA</option>
-                <option value="Development">Development</option>
-                <option value="Management">Management</option>
-                <option value="Audit">Audit</option>
-            </select>
-            <input type="number" name="salary" placeholder="Enter salary"
-             onchange="onChange(event)" required>
-        </div>
-        <div class="buttons">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
-        <label class="error"></label>
-            
-    </form>
+                    </option>
+                    <option value="QA">QA</option>
+                    <option value="Development">Development</option>
+                    <option value="Management">Management</option>
+                    <option value="Audit">Audit</option>
+                </select>
+                <input type="number" name="salary" placeholder="Enter salary" onchange="onChange(event)" required>
+            </div>
+            <p id="salary_error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </section>
+    <section hidden>
+        <p id="all-emlloyees"> </p>
+        <ul class="employees-list"></ul>
+
+    </section>
+    <section hidden>
+        <form id="salary_form" onsubmit="onSubmitS(event)" class="salary-form-class">
+            <div class="two-inputs">
+                <input type="number" name="salaryFrom" required onchange="onChangeSalary(event)" placeholder="Enter salary from">
+                <input type="number" name="salaryTo" required onchange="onChangeSalary(event)" placeholder="Enter salary to">
+            </div>
+            <p id="from-to-salary-error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>    
+        </form>
+        <p id="salary-sub-title"></p>
+        <ul class="employees-list-salary">
+        </ul>
+    </section> 
     <script src="src/form.js"></script>
 </body>
 
