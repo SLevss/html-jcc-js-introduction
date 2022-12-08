@@ -5,19 +5,15 @@ const MAX_PAGES = 1000;
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 
-
-
 const pagesErrorElement = document.getElementById("pages_error");
 const pagesFormErrorElement = document.getElementById("pages_form_error");
+const sectionsElement = document.querySelectorAll("section");
+
 const booksListElement = document.getElementById("books-all");
 const booksPagesListElement = document.getElementById("books-pages");
-const sectionsElement = document.querySelectorAll("section");
-/************************************************************************** */
-//functions of Company
-
 
 const library = new Library();
-//functions of Employee Form
+
 function onSubmit(event) {
     event.preventDefault();
     console.log("submitted");
@@ -29,12 +25,12 @@ function onSubmit(event) {
     )
     console.log(book)
     library.hireBook(book);
-    
+
 }
 function onChange(event) {
     if (event.target.name == "pages") {
         validatePages(event.target)
-    } 
+    }
 }
 function validatePages(element) {
     const value = +element.value;
@@ -49,7 +45,7 @@ function showErrorMessage(element, message, errorElement) {
     errorElement.innerHTML = message;
     setTimeout(() => {
         element.classList.remove(ERROR_CLASS);
-        element.value = ''; 
+        element.value = '';
         errorElement.innerHTML = '';
     }, TIME_OUT_ERROR_MESSAGE);
 }
@@ -59,13 +55,13 @@ function onSubmitPages(event) {
     event.preventDefault();
     const books = library.getBooksByPages(pagesFrom, pagesTo);
     booksPagesListElement.innerHTML = getBookItems(books);
- 
+
 }
 function onChangePagesFrom(event) {
     const value = +event.target.value;
     if (pagesFrom && value >= pagesTo) {
         showErrorMessage(event.target, "Pages 'from' must be less than Pages 'to'",
-        salaryFormErrorElement);
+            salaryFormErrorElement);
     } else {
         pagesFrom = value;
     }
@@ -74,7 +70,7 @@ function onChangePagesTo(event) {
     const value = +event.target.value;
     if (pagesFrom && value < pagesFrom) {
         showErrorMessage(event.target, "Pages 'To' must be greater than Pages 'From'",
-        pagesFormErrorElement);
+            pagesFormErrorElement);
     }
     pagesTo = value;
 }
@@ -87,12 +83,12 @@ function show(index) {
     }
 }
 function getBookItems(books) {
-    return books.map (e => 
+    return books.map(e =>
         `<li class="books-item"><div class="books-item-container">
                  <p class="books-item-paragraph">Author: ${e.author} </p>
                  <p class="books-item-paragraph">Title: ${e.title} </p>
                  <p class="books-item-paragraph">Genre: ${e.genre}</p>
-                 <p class="books-item-paragraph">Pages: ${e.pages}</p></div></li>`).join('');
+                 <p class="books-item-paragraph">Pages: ${e.pages}</p></li>`).join('');
 }
 
 window.onSubmit = onSubmit;
