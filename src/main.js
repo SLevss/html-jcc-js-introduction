@@ -4,15 +4,14 @@ const MIN_PAGES = 1;
 const MAX_PAGES = 1000;
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
-const ACTIVE = "active"
+
 
 
 const pagesErrorElement = document.getElementById("pages_error");
 const pagesFormErrorElement = document.getElementById("pages_form_error");
 const booksListElement = document.getElementById("books-all");
-// const booksPagesListElement = document.getElementById("books-pages");
+const booksPagesListElement = document.getElementById("books-pages");
 const sectionsElement = document.querySelectorAll("section");
-const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /************************************************************************** */
 //functions of Company
 
@@ -33,7 +32,6 @@ function onSubmit(event) {
     
 }
 function onChange(event) {
-
     if (event.target.name == "pages") {
         validatePages(event.target)
     } 
@@ -45,9 +43,7 @@ function validatePages(element) {
             : `pages must be ${MAX_PAGES} or less`;
         showErrorMessage(element, message, pagesErrorElement);
     }
-
 }
-
 function showErrorMessage(element, message, errorElement) {
     element.classList.add(ERROR_CLASS);
     errorElement.innerHTML = message;
@@ -57,16 +53,13 @@ function showErrorMessage(element, message, errorElement) {
         errorElement.innerHTML = '';
     }, TIME_OUT_ERROR_MESSAGE);
 }
-
 let pagesFrom = 0;
 let pagesTo = 0;
 function onSubmitPages(event) {
     event.preventDefault();
     const books = library.getBooksByPages(pagesFrom, pagesTo);
-    booksPagesToListElement.innerHTML = getBookItems(books);
-
-
-   
+    booksPagesListElement.innerHTML = getBookItems(books);
+ 
 }
 function onChangePagesFrom(event) {
     const value = +event.target.value;
@@ -86,9 +79,7 @@ function onChangePagesTo(event) {
     pagesTo = value;
 }
 function show(index) {
-    buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
     sectionsElement.forEach(e => e.hidden = true)
-    buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
     if (index == 1) {
         const books = library.getAllBooks();
@@ -97,14 +88,11 @@ function show(index) {
 }
 function getBookItems(books) {
     return books.map (e => 
-        `<li class="books-item">
-              <div class="books-item-container">
+        `<li class="books-item"><div class="books-item-container">
                  <p class="books-item-paragraph">Author: ${e.author} </p>
                  <p class="books-item-paragraph">Title: ${e.title} </p>
                  <p class="books-item-paragraph">Genre: ${e.genre}</p>
-                 <p class="books-item-paragraph">Pages: ${e.pages}</p>
-              </div>
-          </li>`).join('');
+                 <p class="books-item-paragraph">Pages: ${e.pages}</p></div></li>`).join('');
 }
 
 window.onSubmit = onSubmit;
