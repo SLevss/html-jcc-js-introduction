@@ -1,7 +1,7 @@
 import { Library } from "./date/library.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
-const MIN_PAGES = 1;
-const MAX_PAGES = 1000;
+const MIN_PAGES = 50;
+const MAX_PAGES = 2000;
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 
