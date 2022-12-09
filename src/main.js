@@ -88,7 +88,7 @@ function onSubmitPages(event) {
 }
 function onSubmitAuthor(event) {
     event.preventDefault();
-    const author = Array.from(inputElements)[0].value;
+    const author = Array.from(inputElementsAuthor)[0].value;
     const books = library.getBooksAuthor(author);
     booksAuthorListElement.innerHTML = getBookItems(books);
 
