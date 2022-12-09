@@ -4,6 +4,8 @@ const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
 const MIN_YEAR = 1980;
 const MAX_YEAR = getMaxYear();
+const MIN_DATE = new Date('1980-01-01');
+const MAX_DATE = new Date();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 
@@ -59,10 +61,10 @@ function validPages(element) {
     }
 }
 function validPublicationdate(element) {
-    const value = +element.value.slice(0, 4);
-    if (value < MIN_YEAR || value > MAX_YEAR) {
-        const message = value < MIN_YEAR ? `year must be ${MIN_YEAR} or greater`:
-             `year must be ${MAX_YEAR} or less`;
+    const value = new Date(element.value);
+    if (value < MIN_DATE || value > MAX_DATE) {
+        const message = value < MIN_DATE ? `year must be ${MIN_YEAR} or greater`:
+             `year must be ${MAX_DATE} or less`;
         showError(element, message, dateErrorElement) ;    
     }
 }
