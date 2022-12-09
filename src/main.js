@@ -63,7 +63,7 @@ function validPages(element) {
 function validPublicationdate(element) {
     const value = new Date(element.value);
     if (value < MIN_DATE || value > MAX_DATE) {
-        const message = value < MIN_DATE ? `year must be ${MIN_YEAR} or greater`:
+        const message = value < MIN_DATE ? `year must be ${MIN_DATE} or greater`:
              `year must be ${MAX_DATE} or less`;
         showError(element, message, dateErrorElement) ;    
     }
