@@ -32,31 +32,29 @@ function onSubmit(event) {
 }
 function onChange(event) {
     if (event.target.name == "pages") {
-        validatePages(event.target)
+        validPages(event.target)
     } else if (event.target.name == "publicationDate") {
-        validatePublicationdate(event.target);
+        validPublicationdate(event.target);
     }
 }
-function validatePages(element) {
+function validPages(element) {
     const value = +element.value;
     if (value < MIN_PAGES || value > MAX_PAGES) {
         const message = value < MIN_PAGES ? `pages must be ${MIN_PAGES} or greater`
             : `pages must be ${MAX_PAGES} or less`;
-        showErrorMessage(element, message, pagesErrorElement);
+        showError(element, message, pagesErrorElement);
     }
 }
-function validatePublicationdate(element) {
+function validPublicationdate(element) {
     const value = +element.value.slice(0, 4);
     if (value < MIN_YEAR || value > MAX_YEAR) {
         const message = value < MIN_YEAR ? `year must be ${MIN_YEAR} or greater`:
              `year must be ${MAX_YEAR} or less`;
-        showErrorMessage(element, message, dateErrorElement) ;    
-
+        showError(element, message, dateErrorElement) ;    
     }
-
 }
 
-function showErrorMessage(element, message, errorElement) {
+function showError(element, message, errorElement) {
     element.classList.add(ERROR_CLASS);
     errorElement.innerHTML = message;
     setTimeout(() => {
@@ -79,7 +77,7 @@ function onSubmitPages(event) {
 function onChangePagesFrom(event) {
     const value = +event.target.value;
     if (pagesFrom && value >= pagesTo) {
-        showErrorMessage(event.target, "Pages 'from' must be less than Pages 'to'",
+        showError(event.target, "Pages 'from' must be less than Pages 'to'",
             salaryFormErrorElement);
     } else {
         pagesFrom = value;
@@ -88,7 +86,7 @@ function onChangePagesFrom(event) {
 function onChangePagesTo(event) {
     const value = +event.target.value;
     if (pagesFrom && value < pagesFrom) {
-        showErrorMessage(event.target, "Pages 'To' must be greater than Pages 'From'",
+        showError(event.target, "Pages 'To' must be greater than Pages 'From'",
             pagesFormErrorElement);
     }
     pagesTo = value;
