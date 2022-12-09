@@ -3,6 +3,7 @@ const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
 const MIN_YEAR = 1980;
+const maxYear = getMaxYear();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 
@@ -46,13 +47,14 @@ function validatePages(element) {
 }
 function validatePublicationdate(element) {
     const value = +element.value.slice(0, 4);
-    if (value < MIN_YEAR) {
-        const message = `year must be ${MIN_YEAR} or greater`
-    };
-    showErrorMessage(element, message, dateErrorElement);
+    if (value < MIN_YEAR || value > maxYear) {
+        const message = value < MIN_YEAR ? `year must be ${MIN_YEAR} or greater`:
+             `year must be ${maxYear} or less`;
+        showErrorMessage(element, message, dateErrorElement) ;    
+
+    }
 
 }
-
 
 function showErrorMessage(element, message, errorElement) {
     element.classList.add(ERROR_CLASS);
@@ -62,6 +64,9 @@ function showErrorMessage(element, message, errorElement) {
         element.value = '';
         errorElement.innerHTML = '';
     }, TIME_OUT_ERROR_MESSAGE);
+}
+function getMaxYear() {
+    return new Date().getFullYear();
 }
 let pagesFrom = 0;
 let pagesTo = 0;
