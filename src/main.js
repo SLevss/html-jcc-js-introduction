@@ -1,5 +1,6 @@
 import { Library } from "./data/library.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
+const inputElementsAuthor = document.querySelectorAll(".form-class-author [name]");
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
 const MIN_YEAR = 1980;
@@ -26,10 +27,6 @@ function show(index) {
     if (index == 1) {
         const books = library.getAllBooks();
         booksListElement.innerHTML = getBookItems(books);
-    }else if(index == 3){
-        const books = library.getBooksAuthor(author);
-        booksListElement.innerHTML = getBookItems(books);  
-
     }
 }
 function onSubmit(event) {
@@ -63,9 +60,9 @@ function validPages(element) {
 function validPublicationdate(element) {
     const value = new Date(element.value);
     if (value < MIN_DATE || value > MAX_DATE) {
-        const message = value < MIN_DATE ? `year must be ${MIN_DATE} or greater`:
-             `year must be ${MAX_DATE} or less`;
-        showError(element, message, dateErrorElement) ;    
+        const message = value < MIN_DATE ? `year must be ${MIN_DATE} or greater` :
+            `year must be ${MAX_DATE} or less`;
+        showError(element, message, dateErrorElement);
     }
 }
 
@@ -91,7 +88,7 @@ function onSubmitPages(event) {
 }
 function onSubmitAuthor(event) {
     event.preventDefault();
-    const author =Array.from(inputElements)[0].value;
+    const author = Array.from(inputElements)[0].value;
     const books = library.getBooksAuthor(author);
     booksAuthorListElement.innerHTML = getBookItems(books);
 
@@ -130,4 +127,4 @@ window.show = show;
 window.onChangePagesTo = onChangePagesTo;
 window.onChangePagesFrom = onChangePagesFrom
 window.onSubmitPages = onSubmitPages
-window.onSubmitAuthor=onSubmitAuthor;
+window.onSubmitAuthor = onSubmitAuthor;

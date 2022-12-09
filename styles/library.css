@@ -17,7 +17,13 @@ body {
     align-items: center;
     flex-grow: 1;
 }
-
+.form-class-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
 .two-inputs {
     display: flex;
     justify-content: space-around;
