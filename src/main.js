@@ -14,6 +14,7 @@ const sectionsElement = document.querySelectorAll("section");
 
 const booksListElement = document.getElementById("books-all");
 const booksPagesListElement = document.getElementById("books-pages");
+const booksAuthorListElement = document.getElementById("books-author");
 
 const library = new Library();
 
@@ -89,7 +90,7 @@ function onSubmitPages(event) {
 function onSubmitAuthor(event) {
     event.preventDefault();
     const books = library.getBooksAuthor(author);
-    booksPagesListElement.innerHTML = getBookItems(books);
+    booksAuthorListElement.innerHTML = getBookItems(books);
 
 }
 function onChangePagesFrom(event) {
