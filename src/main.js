@@ -1,4 +1,4 @@
-import { Library } from "./data/library";
+import { Library } from "./data/library.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
