@@ -23,6 +23,10 @@ function show(index) {
     if (index == 1) {
         const books = library.getAllBooks();
         booksListElement.innerHTML = getBookItems(books);
+    }else if(index == 3){
+        const books = library.getBooksAuthor(author);
+        booksListElement.innerHTML = getBookItems(books);  
+
     }
 }
 function onSubmit(event) {
@@ -82,6 +86,12 @@ function onSubmitPages(event) {
     booksPagesListElement.innerHTML = getBookItems(books);
 
 }
+function onSubmitAuthor(event) {
+    event.preventDefault();
+    const books = library.getBooksAuthor(pagesFrom, pagesTo);
+    booksPagesListElement.innerHTML = getBookItems(books);
+
+}
 function onChangePagesFrom(event) {
     const value = +event.target.value;
     if (pagesFrom && value >= pagesTo) {
@@ -116,3 +126,4 @@ window.show = show;
 window.onChangePagesTo = onChangePagesTo;
 window.onChangePagesFrom = onChangePagesFrom
 window.onSubmitPages = onSubmitPages
+window.onSubmitAuthor=onSubmitAuthor;

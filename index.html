@@ -17,6 +17,7 @@
         <button onclick="show(0)" class="btn-menu">Add book</button>
         <button onclick="show(1)" class="btn-menu">Show All books</button>
         <button onclick="show(2)" class="btn-menu">Show books by pages</button>
+        <button onclick="show(3)" class="btn-menu">Show books by the selected author</button>
     </div>
     <section id="add-employee" hidden>
         <header class="form-title">
@@ -76,6 +77,26 @@
         </ul>
     </section>
 
+    <p id="pages_form_error" class="error center"></p>
+    <ul class="books-list" id="books-pages">
+
+    </ul>
+</section>
+<section id="show-books-author" hidden>
+    <form id="pages-form" class="form-class" onsubmit="onSubmitAuthor(event)">
+        <div class="two-inputs">
+            <input type="text" name="Author" placeholder="Enter author" required>
+          
+        </div>
+        <div class="buttons">
+            <button type="submit">Search</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+    <ul class="books-list" id="books-author">
+
+    </ul>
+</section>
     <script src="src/main.js" type="module"></script>
 </body>
 

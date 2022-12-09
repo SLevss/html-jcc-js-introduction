@@ -12,4 +12,7 @@ export class Library {
     getBooksByPages(pagesFrom, pagesTo) {
         return this.books.filter(e => e.pages >= pagesFrom && e.pages < pagesTo);
     }
+    getBooksAuthor(author) {
+        return this.books.filter(e => e.author >= author);
+    }
 }
