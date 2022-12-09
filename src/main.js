@@ -17,6 +17,14 @@ const booksPagesListElement = document.getElementById("books-pages");
 
 const library = new Library();
 
+function show(index) {
+    sectionsElement.forEach(e => e.hidden = true)
+    sectionsElement[index].hidden = false;
+    if (index == 1) {
+        const books = library.getAllBooks();
+        booksListElement.innerHTML = getBookItems(books);
+    }
+}
 function onSubmit(event) {
     event.preventDefault();
     console.log("submitted");
@@ -91,14 +99,7 @@ function onChangePagesTo(event) {
     }
     pagesTo = value;
 }
-function show(index) {
-    sectionsElement.forEach(e => e.hidden = true)
-    sectionsElement[index].hidden = false;
-    if (index == 1) {
-        const books = library.getAllBooks();
-        booksListElement.innerHTML = getBookItems(books);
-    }
-}
+
 function getBookItems(books) {
     return books.map(e =>
         `<li class="books-item"><div class="books-item-container">
