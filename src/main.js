@@ -2,10 +2,12 @@ import { Library } from "./data/library.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
+const MIN_YEAR = 1980;
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 
 const pagesErrorElement = document.getElementById("pages_error");
+const dateErrorElement = document.getElementById("date_error");
 const pagesFormErrorElement = document.getElementById("pages_form_error");
 const sectionsElement = document.querySelectorAll("section");
 
@@ -30,6 +32,8 @@ function onSubmit(event) {
 function onChange(event) {
     if (event.target.name == "pages") {
         validatePages(event.target)
+    } else if (event.target.name == "publicationDate") {
+        validatePublicationdate(event.target);
     }
 }
 function validatePages(element) {
@@ -40,6 +44,16 @@ function validatePages(element) {
         showErrorMessage(element, message, pagesErrorElement);
     }
 }
+function validatePublicationdate(element) {
+    const value = +element.value.slice(0, 4);
+    if (value < MIN_YEAR) {
+        const message = `year must be ${MIN_YEAR} or greater`
+    };
+    showErrorMessage(element, message, dateErrorElement);
+
+}
+
+
 function showErrorMessage(element, message, errorElement) {
     element.classList.add(ERROR_CLASS);
     errorElement.innerHTML = message;
@@ -88,6 +102,7 @@ function getBookItems(books) {
                  <p class="books-item-paragraph">Author: ${e.author} </p>
                  <p class="books-item-paragraph">Title: ${e.title} </p>
                  <p class="books-item-paragraph">Genre: ${e.genre}</p>
+                 <p class="books-item-paragraph">Publicationdate: ${e.publicationDate}</p>
                  <p class="books-item-paragraph">Pages: ${e.pages}</p></li>`).join('');
 }
 

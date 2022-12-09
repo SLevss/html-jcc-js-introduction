@@ -26,6 +26,11 @@
             <div class="two-inputs">
                 <input type="text" name="author" required placeholder="Enter author">
                 <input type="text" name="title" required placeholder="Enter title">
+                <div class="date-label">
+                    <label>Enter publication date</label>
+                    <input type="date" name="publicationDate" required onchange="onChange(event)">
+
+                </div>
                 <p id="date_error" class="error"></p>
                 <div class="two-inputs">
                     <select name="genre" required>
