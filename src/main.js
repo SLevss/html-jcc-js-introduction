@@ -3,7 +3,7 @@ const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGES = 50;
 const MAX_PAGES = 2000;
 const MIN_YEAR = 1980;
-const maxYear = getMaxYear();
+const MAX_YEAR = getMaxYear();
 const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 
@@ -47,9 +47,9 @@ function validatePages(element) {
 }
 function validatePublicationdate(element) {
     const value = +element.value.slice(0, 4);
-    if (value < MIN_YEAR || value > maxYear) {
+    if (value < MIN_YEAR || value > MAX_YEAR) {
         const message = value < MIN_YEAR ? `year must be ${MIN_YEAR} or greater`:
-             `year must be ${maxYear} or less`;
+             `year must be ${MAX_YEAR} or less`;
         showErrorMessage(element, message, dateErrorElement) ;    
 
     }
