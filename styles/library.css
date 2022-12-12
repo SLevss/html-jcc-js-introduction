@@ -17,7 +17,7 @@ body {
     align-items: center;
     flex-grow: 1;
 }
-.form-class-author {
+.author-form-class {
     display: flex;
     flex-direction: column;
     justify-content: center;

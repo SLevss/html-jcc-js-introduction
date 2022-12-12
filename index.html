@@ -23,13 +23,13 @@
         <header class="form-title">
 
         </header>
-        <form id="book_form" onsubmit="onSubmit(event)" class="form-class">
+        <form id="book_form" class="form-class">
             <div class="two-inputs">
                 <input type="text" name="author" required placeholder="Enter author">
                 <input type="text" name="title" required placeholder="Enter title">
                 <div class="date-label">
                     <label>Enter publication date</label>
-                    <input type="date" name="publicationDate" required onchange="onChange(event)">
+                    <input type="date" name="publicationDate" required id="date_input">
 
                 </div>
                 <p id="date_error" class="error"></p>
@@ -43,7 +43,7 @@
                         <option value="Roman">roman</option>
                         <option value="History">history</option>
                     </select>
-                    <input type="number" name="pages" placeholder="Enter pages" onchange="onChange(event)" required>
+                    <input type="number" name="pages" placeholder="Enter pages" id="pages_input" required>
 
                 </div>
                 <p id="pages_error" class="error"></p>
@@ -83,10 +83,11 @@
     </ul>
 </section>
 <section id="show-books-author" hidden>
-    <form id="author-form" class="form-class-author" onsubmit="onSubmitAuthor(event)">
-        <div class="one-inputs">
-            <input type="text" name="Author" placeholder="Enter author" required>
-          
+    
+    <form id="author-form" class="author-form-class" onsubmit="onSubmitAuthor(event)">
+        <div class="one-input">
+            <label>Author</label>
+            <input type="text" name="author-name" placeholder="Enter author" required>
         </div>
         <div class="buttons">
             <button type="submit">Search</button>
