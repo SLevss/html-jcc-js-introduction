@@ -43,7 +43,7 @@ function onChangePagesFrom(event) {
     const value = +event.target.value;
     if (pagesFrom && value >= pagesTo) {
         showError(event.target, "Pages 'from' must be less than Pages 'to'",
-            salaryFormErrorElement);
+            bookFormErrorElement);
     } else {
         pagesFrom = value;
     }
