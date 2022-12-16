@@ -14,8 +14,6 @@ const MIN_DATE = new Date('1980-01-01');
 const MAX_DATE = new Date();
 
 const sectionsElement = document.querySelectorAll("section");
-const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
-
 const library = new Library();
 
 const bookForm = new BookForm({
