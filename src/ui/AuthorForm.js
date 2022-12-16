@@ -5,7 +5,7 @@ export class AuthorForm {
     constructor(params) {
         this.#formElement = document.getElementById(params.idForm);
         this.#inputElements = document.getElementById(params.idInput);
-        this.onSubmitAuthor();
+       
     }
     addSubmitHandler(processAuthorFun) {
         this.#formElement.addEventListener("submit", (event) => {

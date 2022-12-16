@@ -53,16 +53,18 @@
                 </div>
         </form>
     </section>
+
     <section id="show-all-books" hidden>
         <ul class="books-list" id="books-all">
 
         </ul>
     </section>
-    <section id="show-books-pages" hidden>
-        <form id="pages-form" class="form-class">
+    <<section id="show-books-pages" hidden>
+    
+        <form id="pages-form" class="form-class" >
             <div class="two-inputs">
                 <input type="number" id="pageFrom" name="pagesFrom" placeholder="Enter pages 'From'"  required>
-                <input type="number" id="pageTo" name="pagesTo" placeholder="Enter pages 'To'" required>
+                <input type="number" id="pageTo" name="pagesTo" placeholder="Enter pages 'To'"  required>
             </div>
             <div class="buttons">
                 <button type="submit">Search</button>
@@ -79,23 +81,23 @@
     <ul class="books-list" id="books-pages">
 
     </ul>
-</section>
-<section id="show-books-author" hidden>
-    
-    <form id="author-form" class="author-form-class">
-        <div class="one-input">
-            <label>Author</label>
-            <input type="text" id="inputElements" name="author-name" placeholder="Enter author" required>
-        </div>
-        <div class="buttons">
-            <button type="submit">Search</button>
-            <button type="reset">Reset</button>
-        </div>
-    </form>
-    <ul class="books-list" id="books-author">
+    </section>
+    <section id="show-books-author" hidden>
 
-    </ul>
-</section>
+        <form id="author-form" class="author-form-class">
+            <div class="one-input">
+                <label>Author</label>
+                <input type="text" id="author" name="author" placeholder="Enter author" required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <ul class="books-list" id="books-author">
+
+        </ul>
+    </section>
     <script src="src/main.js" type="module"></script>
 </body>
 
