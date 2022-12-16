@@ -2,7 +2,7 @@ body, html {
     height: 100%;
 }
 body {
-    background-color: aliceblue;
+    background-color: rgb(148, 183, 213);
 }
 .form-title {
     text-align: center;
